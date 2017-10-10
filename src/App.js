@@ -9,6 +9,19 @@ class App extends Component {
 					<h1 className="App-title">Markdown Previewer</h1>
 				</header>
 				<p className="App-intro">TODO: put text area and preview div here.</p>
+				<footer>
+					<p>MIT License.</p>
+					<p>
+						Source code available at{' '}
+						<a
+							href="https://github.com/ch3rn0v/markdown-previewer"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							https://github.com/ch3rn0v/markdown-previewer
+						</a>
+					</p>
+				</footer>
 			</div>
 		);
 	}
