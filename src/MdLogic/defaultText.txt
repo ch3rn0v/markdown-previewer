@@ -1,6 +1,5 @@
 # h1 Heading 8-)
 ## h2 Heading
-Disclaimer: this markdown previewer is built with great help of awesome [markdown-it](https://github.com/markdown-it/markdown-it) library.
 ### h3 Heading
 #### h4 Heading
 ##### h5 Heading
