@@ -33,7 +33,7 @@ export class MdPreviewer extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div id="md-wrapper">
 				<MdUserInput textAreaChange={this.onTextAreaChange} />
 				<MdDisplay userInput={this.state.parsedText} />
 			</div>

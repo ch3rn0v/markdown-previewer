@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export class MdDisplay extends React.Component {
 	render() {
 		return (
-			<div>
+			<div id="md-preview">
 				{this.props.userInput.map((renderedMdString, index) => {
 					return <p key={index}>{renderedMdString}</p>;
 				})}

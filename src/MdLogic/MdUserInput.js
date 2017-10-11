@@ -8,7 +8,7 @@ export class MdUserInput extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div id="user-input">
 				<textarea placeholder="Enter your markdown code here." onChange={this.onTextAreaChange} />
 			</div>
 		);
