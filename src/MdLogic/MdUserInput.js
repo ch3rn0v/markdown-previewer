@@ -9,6 +9,7 @@ export const MdUserInput = (props) => {
 	return (
 		<div id="user-input">
 			<textarea
+				id="md-source-textarea"
 				placeholder="Enter your markdown code here."
 				onChange={onTextAreaChange}
 				value={props.textAreaValue}
