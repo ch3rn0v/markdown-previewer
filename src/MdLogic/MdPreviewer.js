@@ -2,6 +2,11 @@ import React from 'react';
 
 import { MdUserInput } from './MdUserInput';
 import { MdDisplay } from './MdDisplay';
+
+// Import text as external file in order to display long default text.
+import defaultTextFile from './defaultText.txt';
+
+// Import Markdown-related stuff and initialize it.
 import emoji from 'markdown-it-emoji';
 import sub from 'markdown-it-sub';
 import sup from 'markdown-it-sup';
@@ -20,8 +25,7 @@ export class MdPreviewer extends React.Component {
 		super(props);
 
 		this.state = {
-			enteredText:
-				'# Welcome to Markdown Previewer!\nEnter your markdown text __here__ and you will see its preview on the _right_.',
+			enteredText: '',
 			parsedText: ''
 		};
 	}
@@ -35,8 +39,15 @@ export class MdPreviewer extends React.Component {
 		this.setState({ parsedText: newParsedText });
 	};
 
-	componentWillMount() {
-		this.renderNewMdPreview();
+	componentDidMount() {
+		fetch(defaultTextFile)
+			.then((res) => {
+				return res.text();
+			})
+			.then((textFromFile) => {
+				this.setState({ enteredText: textFromFile });
+				this.renderNewMdPreview();
+			});
 	}
 
 	render() {
