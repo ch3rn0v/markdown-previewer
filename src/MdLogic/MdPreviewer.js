@@ -9,8 +9,11 @@ export class MdPreviewer extends React.Component {
 		super(props);
 
 		this.state = {
-			enteredText: [],
-			parsedText: [ 'Markdown preview will appear here.' ]
+			enteredText: [
+				'# Welcome to Markdown Previewer!',
+				'Enter your markdown text __here__ and you will see its preview on the _right_.'
+			],
+			parsedText: []
 		};
 	}
 
@@ -26,10 +29,14 @@ export class MdPreviewer extends React.Component {
 		this.setState({ parsedText: newParsedTextArray });
 	};
 
+	componentWillMount() {
+		this.renderNewMdPreview();
+	}
+
 	render() {
 		return (
 			<div id="md-wrapper">
-				<MdUserInput textAreaChange={this.onTextAreaChange} />
+				<MdUserInput textAreaChange={this.onTextAreaChange} textAreaValue={this.state.enteredText.join('\n')} />
 				<MdDisplay userInput={this.state.parsedText} />
 			</div>
 		);

@@ -8,11 +8,16 @@ export const MdUserInput = (props) => {
 
 	return (
 		<div id="user-input">
-			<textarea placeholder="Enter your markdown code here." onChange={onTextAreaChange} />
+			<textarea
+				placeholder="Enter your markdown code here."
+				onChange={onTextAreaChange}
+				value={props.textAreaValue}
+			/>
 		</div>
 	);
 };
 
 MdUserInput.propTypes = {
-	textAreaChange: PropTypes.func.isRequired
+	textAreaChange: PropTypes.func.isRequired,
+	textAreaValue: PropTypes.string.isRequired
 };
