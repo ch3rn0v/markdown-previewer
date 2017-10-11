@@ -8,6 +8,7 @@
 	},
 	"devDependencies": {
 		"gh-pages": "^1.0.0",
+		"highlightjs": "^9.10.0",
 		"markdown-it": "^8.4.0",
 		"markdown-it-emoji": "^1.4.0",
 		"markdown-it-sub": "^1.0.0",

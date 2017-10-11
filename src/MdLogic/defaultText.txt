@@ -97,6 +97,10 @@ Sample text here...
 
 Syntax highlighting
 
+``` html
+<div class="highlight">Hello!</div>
+```
+
 ``` js
 var foo = function (bar) {
   return bar++;

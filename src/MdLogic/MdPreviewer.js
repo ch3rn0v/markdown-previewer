@@ -6,6 +6,9 @@ import { MdDisplay } from './MdDisplay';
 // Import text as external file in order to display long default text.
 import defaultTextFile from './defaultText.txt';
 
+// Import code highlighting lib
+import hljs from 'highlightjs';
+
 // Import Markdown-related stuff and initialize it.
 import emoji from 'markdown-it-emoji';
 import sub from 'markdown-it-sub';
@@ -13,6 +16,16 @@ import sup from 'markdown-it-sup';
 import MarkdownIt from 'markdown-it';
 let md = new MarkdownIt({
 	html: true,
+	langPrefix: '',
+	highlight: function(str, lang) {
+		if (lang && hljs.getLanguage(lang)) {
+			try {
+				return '<pre class="hljs"><code>' + hljs.highlight(lang, str, true).value + '</code></pre>';
+			} catch (e) {}
+		}
+
+		return ''; // use external default escaping
+	},
 	linkify: true,
 	typographer: true
 })

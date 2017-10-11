@@ -92,22 +92,20 @@ body {
 	font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	padding: 2px 4px;
 	margin: 2px 0;
-	font-size: 85%;
-	background-color: rgba(27, 31, 35, 0.05);
+	background-color: rgba(155, 25, 25, 0.08);
+	color: rgb(135, 50, 50);
 	border-radius: 3px;
 }
 
 #md-preview pre {
 	padding: 16px;
-	overflow: auto;
-	font-size: 85%;
-	line-height: 1.45;
 	background-color: #f6f8fa;
 	border-radius: 3px;
 }
 
 #md-preview pre > code {
 	background-color: #f6f8fa;
+	color: #333;
 }
 
 #md-preview h1 {
@@ -140,12 +138,92 @@ body {
 	overflow: hidden;
 }
 
+#md-preview table {
+	margin: 6px 0;
+}
+
+#md-preview table,
+td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 4px;
+}
+
 #md-preview .emoji {
 	height: 1.2em;
 }
+
 #md-preview img {
 	max-width: 35%;
 }
-#md-preview code {
-	white-space: pre;
+
+/* Styles from highlightjs.org for (you guessed it!) code highlighting */
+#md-preview > pre.hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #23241f;
+}
+#md-preview > pre.hljs code {
+	background: #23241f;
+}
+#md-preview > pre.hljs > code,
+#md-preview .hljs-tag,
+#md-preview .hljs-subst {
+	color: #f8f8f2;
+}
+.hljs-strong,
+.hljs-emphasis {
+	color: #a8a8a2;
+}
+#md-preview .hljs-bullet,
+#md-preview .hljs-quote,
+#md-preview .hljs-number,
+#md-preview .hljs-regexp,
+#md-preview .hljs-literal,
+#md-preview .hljs-link {
+	color: #ae81ff;
+}
+#md-preview .hljs-code,
+#md-preview .hljs-title,
+#md-preview .hljs-section,
+#md-preview .hljs-selector-class {
+	color: #a6e22e;
+}
+#md-preview .hljs-strong {
+	font-weight: bold;
+}
+#md-preview .hljs-emphasis {
+	font-style: italic;
+}
+#md-preview .hljs-keyword,
+#md-preview .hljs-selector-tag,
+#md-preview .hljs-name,
+#md-preview .hljs-attr {
+	color: #f92672;
+}
+#md-preview .hljs-symbol,
+#md-preview .hljs-attribute {
+	color: #66d9ef;
+}
+#md-preview .hljs-params,
+#md-preview .hljs-class .hljs-title {
+	color: #f8f8f2;
+}
+#md-preview .hljs-string,
+#md-preview .hljs-type,
+#md-preview .hljs-built_in,
+#md-preview .hljs-builtin-name,
+#md-preview .hljs-selector-id,
+#md-preview .hljs-selector-attr,
+#md-preview .hljs-selector-pseudo,
+#md-preview .hljs-addition,
+#md-preview .hljs-variable,
+#md-preview .hljs-template-variable {
+	color: #e6db74;
+}
+#md-preview .hljs-comment,
+#md-preview .hljs-deletion,
+#md-preview .hljs-meta {
+	color: #75715e;
 }
