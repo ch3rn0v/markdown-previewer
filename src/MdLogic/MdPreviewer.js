@@ -2,12 +2,18 @@ import React from 'react';
 
 import { MdUserInput } from './MdUserInput';
 import { MdDisplay } from './MdDisplay';
+import emoji from 'markdown-it-emoji';
+import sub from 'markdown-it-sub';
+import sup from 'markdown-it-sup';
 import MarkdownIt from 'markdown-it';
 let md = new MarkdownIt({
 	html: true,
 	linkify: true,
 	typographer: true
-});
+})
+	.use(emoji)
+	.use(sub)
+	.use(sup);
 
 export class MdPreviewer extends React.Component {
 	constructor(props) {
