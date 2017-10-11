@@ -2,31 +2,31 @@ import React from 'react';
 
 import { MdUserInput } from './MdUserInput';
 import { MdDisplay } from './MdDisplay';
-import marked from 'marked';
+import MarkdownIt from 'markdown-it';
+let md = new MarkdownIt({
+	html: true,
+	linkify: true,
+	typographer: true
+});
 
 export class MdPreviewer extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			enteredText: [
-				'# Welcome to Markdown Previewer!',
-				'Enter your markdown text __here__ and you will see its preview on the _right_.'
-			],
-			parsedText: []
+			enteredText:
+				'# Welcome to Markdown Previewer!\nEnter your markdown text __here__ and you will see its preview on the _right_.',
+			parsedText: ''
 		};
 	}
 
 	onTextAreaChange = (currentTextAreaContents) => {
-		this.setState({ enteredText: currentTextAreaContents.split('\n') }, this.renderNewMdPreview);
+		this.setState({ enteredText: currentTextAreaContents }, this.renderNewMdPreview);
 	};
 
 	renderNewMdPreview = () => {
-		var newParsedTextArray = [];
-		for (var markdownString of this.state.enteredText) {
-			newParsedTextArray.push(marked(markdownString));
-		}
-		this.setState({ parsedText: newParsedTextArray });
+		var newParsedText = md.render(this.state.enteredText);
+		this.setState({ parsedText: newParsedText });
 	};
 
 	componentWillMount() {
@@ -36,7 +36,7 @@ export class MdPreviewer extends React.Component {
 	render() {
 		return (
 			<div id="md-wrapper">
-				<MdUserInput textAreaChange={this.onTextAreaChange} textAreaValue={this.state.enteredText.join('\n')} />
+				<MdUserInput textAreaChange={this.onTextAreaChange} textAreaValue={this.state.enteredText} />
 				<MdDisplay userInput={this.state.parsedText} />
 			</div>
 		);
