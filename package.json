@@ -8,6 +8,7 @@
 	},
 	"devDependencies": {
 		"gh-pages": "^1.0.0",
+		"marked": "^0.3.6",
 		"react-scripts": "1.0.14"
 	},
 	"scripts": {

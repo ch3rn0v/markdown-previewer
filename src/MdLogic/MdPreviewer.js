@@ -2,6 +2,7 @@ import React from 'react';
 
 import { MdUserInput } from './MdUserInput';
 import { MdDisplay } from './MdDisplay';
+import marked from 'marked';
 
 export class MdPreviewer extends React.Component {
 	constructor(props) {
@@ -17,16 +18,10 @@ export class MdPreviewer extends React.Component {
 		this.setState({ enteredText: currentTextAreaContents.split('\n') }, this.renderNewMdPreview);
 	};
 
-	parseMdString = (markdownString) => {
-		var result = markdownString;
-		// TODO: parse text
-		return result;
-	};
-
 	renderNewMdPreview = () => {
 		var newParsedTextArray = [];
 		for (var markdownString of this.state.enteredText) {
-			newParsedTextArray.push(this.parseMdString(markdownString));
+			newParsedTextArray.push(marked(markdownString));
 		}
 		this.setState({ parsedText: newParsedTextArray });
 	};
