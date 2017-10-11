@@ -9,14 +9,26 @@ export class MdPreviewer extends React.Component {
 
 		this.state = {
 			enteredText: [],
-			parsedText: ''
+			parsedText: [ 'Markdown preview will appear here.' ]
 		};
 	}
 
 	onTextAreaChange = (currentTextAreaContents) => {
-		// TODO: parse text area contents
-		// update state
-		// update MdDisplay
+		this.setState({ enteredText: currentTextAreaContents.split('\n') }, this.renderNewMdPreview);
+	};
+
+	parseMdString = (markdownString) => {
+		var result = markdownString;
+		// TODO: parse text
+		return result;
+	};
+
+	renderNewMdPreview = () => {
+		var newParsedTextArray = [];
+		for (var markdownString of this.state.enteredText) {
+			newParsedTextArray.push(this.parseMdString(markdownString));
+		}
+		this.setState({ parsedText: newParsedTextArray });
 	};
 
 	render() {

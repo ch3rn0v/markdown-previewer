@@ -5,12 +5,14 @@ export class MdDisplay extends React.Component {
 	render() {
 		return (
 			<div>
-				<p>Markdown preview will be displayed here.</p>
+				{this.props.userInput.map((renderedMdString, index) => {
+					return <p key={index}>{renderedMdString}</p>;
+				})}
 			</div>
 		);
 	}
 }
 
 MdDisplay.propTypes = {
-	userInput: PropTypes.string.isRequired
+	userInput: PropTypes.array.isRequired
 };
