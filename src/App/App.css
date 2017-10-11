@@ -21,7 +21,7 @@ body {
 }
 
 #md-wrapper {
-	min-height: 600px;
+	min-height: 700px;
 }
 
 /* Textarea */
@@ -36,7 +36,7 @@ body {
 
 	resize: none;
 	border: none;
-	background-color: #fdfdfd;
+	background-color: #fafafa;
 
 	font-family: 'Courier New';
 	font-size: 14px;
@@ -51,7 +51,7 @@ body {
 #user-input textarea,
 #md-preview {
 	width: 500px;
-	height: 600px;
+	height: 700px;
 	margin: 0;
 }
 
@@ -64,12 +64,88 @@ body {
 	float: right;
 	text-align: left;
 
-	background-color: #fafafa;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	word-wrap: break-word;
+
+	background-color: #fdfdfd;
 
 	font-size: 14px;
 	padding: 12px;
+	padding-right: 14px;
 }
 
 #md-preview p {
 	margin: 0;
+}
+
+/* Markdown styles */
+
+#md-preview blockquote {
+	padding: 0 1em;
+	color: #6a737d;
+	border-left: 0.25em solid #dfe2e5;
+}
+
+#md-preview * > code {
+	box-sizing: border-box;
+	font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	padding: 2px 4px;
+	margin: 2px 0;
+	font-size: 85%;
+	background-color: rgba(27, 31, 35, 0.05);
+	border-radius: 3px;
+}
+
+#md-preview pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f6f8fa;
+	border-radius: 3px;
+}
+
+#md-preview pre > code {
+	background-color: #f6f8fa;
+}
+
+#md-preview h1 {
+	padding-bottom: 0.3em;
+	font-size: 2em;
+	border-bottom: 1px solid #eaecef;
+}
+
+#md-preview h2 {
+	padding-bottom: 0.3em;
+	font-size: 1.5em;
+	border-bottom: 1px solid #eaecef;
+}
+
+#md-preview h3 {
+	font-size: 1.25em;
+	margin-top: 24px;
+	margin-bottom: 16px;
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+#md-preview hr {
+	margin: 25px 0 20px;
+	height: 0.25em;
+	padding: 0;
+	margin: 24px 0;
+	background-color: #e1e4e8;
+	border: 0;
+	overflow: hidden;
+}
+
+#md-preview .emoji {
+	height: 1.2em;
+}
+#md-preview img {
+	max-width: 35%;
+}
+#md-preview code {
+	white-space: pre;
 }
